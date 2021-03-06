@@ -4,7 +4,7 @@ import django
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
 django.setup()
 
-from datacenter.models import Passcard
+from datacenter.models import Passcard, Visit
 
 if __name__ == "__main__":
     # Программируем здесь
@@ -15,3 +15,4 @@ if __name__ == "__main__":
     for field in (['owner_name', 'passcode', 'created_at', 'is_active']):
         print('{}: {}'.format(field, passcard.__dict__.get(field)))
     print("Активных пропусков: {}".format(Passcard.objects.filter(is_active=True).count()))
+    print(Visit.objects.all())
