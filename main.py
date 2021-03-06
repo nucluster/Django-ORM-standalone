@@ -13,3 +13,4 @@ if __name__ == "__main__":
     print('Количество пропусков:', Passcard.objects.count())
     print(Passcard.objects.all())
     
+    
