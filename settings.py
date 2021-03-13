@@ -13,6 +13,6 @@ INSTALLED_APPS = ['datacenter']
 
 SECRET_KEY = 'REPLACE_ME'
 
-TIME_ZONE = 'Asia/Yekaterinburg'
+TIME_ZONE = 'UTC'
 
 USE_TZ = True
