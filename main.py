@@ -23,11 +23,13 @@ if __name__ == "__main__":
     print(Passcard.objects.all())
     print("Активных пропусков: {}".format(Passcard.objects.filter(is_active=True).count()))
     passcard = Passcard.objects.get(id=1)
-    print("Пропуск с id=1:", passcard)
+    print("Пропуск с id=1:", passcard.)
+    print("Визиты id=1:", passcard)
     for field in (['owner_name', 'passcode', 'created_at', 'is_active']):
         print('{}: {}'.format(field, passcard.__dict__.get(field)))
     lst_in_storage = [visit.passcard.owner_name for visit in Visit.objects.filter(leaved_at=None)]
     print("Список людей в хранилище:", lst_in_storage)
+
     print("Число визитов в хранилище человека с пропуском id=1({1}): {0}".format(Visit.objects.filter(
         passcard__id=passcard.pk).count(), passcard.owner_name))
     print('Визиты дольше 1000 мин:', len([item for item in Visit.objects.all() if item.is_visit_long(
